@@ -6,7 +6,7 @@
 /*   By: psalame <psalame@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 14:50:44 by psalame           #+#    #+#             */
-/*   Updated: 2024/01/07 23:29:16 by psalame          ###   ########.fr       */
+/*   Updated: 2024/01/07 23:28:23 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ Fixed::~Fixed( void )
 {
 }
 
-
 // Operators
 
 Fixed&	Fixed::operator=( const Fixed& number )
@@ -98,7 +97,7 @@ bool	Fixed::operator!=(const Fixed& number) const
 	return (this->fixed_point != number.fixed_point);
 }
 
-Fixed	Fixed::operator+(const Fixed& number)
+Fixed	Fixed::operator+(const Fixed& number) const
 {
 	Fixed	res;
 
@@ -106,7 +105,7 @@ Fixed	Fixed::operator+(const Fixed& number)
 	return (res);
 }
 
-Fixed	Fixed::operator-(const Fixed& number)
+Fixed	Fixed::operator-(const Fixed& number) const
 {
 	Fixed	res;
 
@@ -114,13 +113,13 @@ Fixed	Fixed::operator-(const Fixed& number)
 	return (res);
 }
 
-Fixed	Fixed::operator*(const Fixed& number)
+Fixed	Fixed::operator*(const Fixed& number) const
 {
 	float	res = this->toFloat() * number.toFloat();
 	return (Fixed(res));
 }
 
-Fixed	Fixed::operator/(const Fixed& number)
+Fixed	Fixed::operator/(const Fixed& number) const
 {
 	float	res = this->toFloat() / number.toFloat();
 	return (Fixed(res));

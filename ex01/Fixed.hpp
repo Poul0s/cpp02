@@ -6,7 +6,7 @@
 /*   By: psalame <psalame@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 14:38:20 by psalame           #+#    #+#             */
-/*   Updated: 2024/01/07 19:14:19 by psalame          ###   ########.fr       */
+/*   Updated: 2024/01/13 17:03:12 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Fixed {
 		Fixed( const float number );
 		~Fixed( void );
 		Fixed&			operator=( const Fixed& number);
-		friend std::ostream&	operator<<( std::ostream&output, const Fixed& number );
 		int				getRawBits( void ) const;
 		void			setRawBits( int const rawNumber );
 		float			toFloat( void ) const;
@@ -33,5 +32,7 @@ class Fixed {
 		int					fixed_point;
 		static const int	fractional_bits = 8;
 };
+
+std::ostream&	operator<<( std::ostream&output, const Fixed& number );
 
 #endif

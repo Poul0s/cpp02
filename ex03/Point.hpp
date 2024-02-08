@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalame <psalame@student.42.fr>            +#+  +:+       +#+        */
+/*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 20:13:19 by psalame           #+#    #+#             */
-/*   Updated: 2024/01/07 23:38:47 by psalame          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:57:23 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,12 @@ class Point {
 		Point(const Point& point);
 		~Point( void );
 
-		Point&	operator=(Point& point);
-
-		const Fixed&	GetXValue( void );
-		const Fixed&	GetYValue( void );
+		const Fixed&	GetXValue( void ) const;
+		const Fixed&	GetYValue( void ) const;
 
 	private:
-		Fixed	x;
-		Fixed	y;
+		Fixed const	x;
+		Fixed const	y;
 };
 
 #endif

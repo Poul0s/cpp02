@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalame <psalame@student.42.fr>            +#+  +:+       +#+        */
+/*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 23:03:08 by psalame           #+#    #+#             */
-/*   Updated: 2024/01/07 23:39:14 by psalame          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:57:20 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,18 @@
 
 Point::Point( void )
 {
-	this->x = Fixed(0);
-	this->y = Fixed(0);
 }
 
-Point::Point(const float x, const float y)
+Point::Point(const float x, const float y) : x(Fixed(x)), y(Fixed(y)) 
 {
-	this->x = Fixed(x);
-	this->y = Fixed(y);
 }
 
-Point::Point(const Fixed x, const Fixed y)
+Point::Point(const Fixed x, const Fixed y) : x(x), y(y)
 {
-	this->x = x;
-	this->y = y;
 }
 
-Point::Point(const Point& point)
+Point::Point(const Point& point) : x(point.GetXValue()), y(point.GetYValue())
 {
-	this->x = Fixed(point.x);
-	this->y = Fixed(point.y);
 }
 
 Point::~Point( void )
@@ -43,25 +35,14 @@ Point::~Point( void )
 }
 
 
-// Operator
-
-Point&	Point::operator=(Point& point)
-{
-	this->x = Fixed(point.x);
-	this->y = Fixed(point.y);
-
-	return (*this);
-}
-
-
 // Functions
 
-const Fixed&	Point::GetXValue( void )
+const Fixed&	Point::GetXValue( void ) const
 {
 	return (this->x);
 }
 
-const Fixed&	Point::GetYValue( void )
+const Fixed&	Point::GetYValue( void ) const
 {
 	return (this->y);
 }

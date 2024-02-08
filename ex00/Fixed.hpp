@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psalame <psalame@student.42.fr>            +#+  +:+       +#+        */
+/*   By: psalame <psalame@student.42angouleme.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 14:38:20 by psalame           #+#    #+#             */
-/*   Updated: 2023/12/27 14:59:06 by psalame          ###   ########.fr       */
+/*   Updated: 2024/02/08 16:11:32 by psalame          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Fixed {
 		Fixed( Fixed& number );
 		~Fixed( void );
 		Fixed&	operator=( Fixed& number);
+
 		int		getRawBits( void );
 		void	setRawBits( int const rawNumber );
 
